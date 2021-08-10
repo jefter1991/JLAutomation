@@ -28,6 +28,10 @@ export default function ListDevices(){
     { cancelable: false }
   );
 
+  function navigateToEditDevices(item){
+    navigation.navigate('EditDevices',{item});
+  }
+
   function goBack(){
     navigation.goBack();
   }
@@ -102,7 +106,7 @@ export default function ListDevices(){
           <View style={styles.listItemPart}>
             <Text style={styles.listItemText}> {item.dev_name}</Text>
             <TouchableOpacity
-              onPress={()=>{}}
+              onPress={()=>navigateToEditDevices(item)}
             >
               <Feather size={25} name="edit" color="#FFF"/>
             </TouchableOpacity>

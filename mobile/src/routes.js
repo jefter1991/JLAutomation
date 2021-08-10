@@ -6,6 +6,7 @@ import CreateParts from './pages/Parts/Create';
 import ListParts from './pages/Parts/List';
 import EditParts from './pages/Parts/Edit';
 import CreateDevices from './pages/Devices/Create';
+import EditDevices from './pages/Devices/Edit';
 import ListDevices from './pages/Devices/List'
 import Home from  './pages/Home';
 import MyHouse from './pages/MyHouse';
@@ -23,6 +24,7 @@ export default function Routes( ) {
           <Stack.Screen name="EditParts" component={EditParts} />
           <Stack.Screen name="ListDevices" component={ListDevices} />
           <Stack.Screen name="CreateDevices" component={CreateDevices}/>
+          <Stack.Screen name="EditDevices" component={EditDevices} />
           <Stack.Screen name="MyHouse" component={MyHouse} />
           <Stack.Screen name="DevicesParts" component={DevicesPart} />
       </Stack.Navigator>

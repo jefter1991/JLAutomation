@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, Image, TextInput, Button, Picker, TouchableOpacity} from 'react-native';
+import {View, Text, TextInput, Button, Picker, TouchableOpacity,  ImageBackground} from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { useFormik } from 'formik';
 import { Feather} from '@expo/vector-icons';
@@ -7,8 +7,9 @@ import * as Animatable from 'react-native-animatable';
 
 import api from '../../../services/api';
 import styles from './styles';
+import imgBg from '../../../assets/Fundo.jpeg';
 
-import logoImg from '../../../assets/logo.png';
+
 
 
 function validateIP(id) {
@@ -106,16 +107,26 @@ export default function EditParts(){
   });
 
   return (
-    <View style={styles.container}>
+    <ImageBackground 
+        style={styles.container}
+        source={imgBg}
+    >
+    
         <View style={styles.header}>
-          <Image source={logoImg}/>
           <Animatable.Text 
               style={styles.headerText}
               animation="fadeIn"
               useNativeDriver
               duration={2000}
           >
-            
+            JL  
+          </Animatable.Text>
+          <Animatable.Text 
+              style={styles.headerText}
+              animation="fadeIn"
+              useNativeDriver
+              duration={2000}
+          >
             Automação Residencial
           </Animatable.Text>
         </View>
@@ -168,14 +179,15 @@ export default function EditParts(){
 
           <View style={styles.formControl}>
               <Button
-                color="#008080"
+                color="#47c3dd"
                 onPress={handleSubmit}
                 title="Confirmar"
               />
               
           </View>
         </View>  
-        </View>
+ 
+      </ImageBackground>  
       );
 };
 

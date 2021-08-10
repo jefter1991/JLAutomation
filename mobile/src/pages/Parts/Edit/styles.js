@@ -1,31 +1,38 @@
 import { StyleSheet} from 'react-native';
 import Constants from 'expo-constants';
 
-const fundo = "#FFF";
-const contFundo = "#A9A9A9";
-const buttons = "#008080";
+
+const buttons = "#47c3dd";
+const textButons = "#FFF";
+
 
 export default StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal:24,
     paddingTop: Constants.statusBarHeight + 20,
-    backgroundColor:contFundo,
   },
 
   header: {
-    flexDirection:'row',
     justifyContent: 'space-between',
     alignItems:'center',
-    backgroundColor:fundo,
+    backgroundColor:'transparent',
     paddingRight:20,
+    marginBottom:20
   },
 
   headerText:{
-    fontSize:16,
+    fontSize:27,
     fontWeight:'bold',
-    color:buttons,
-    marginLeft:10,
+    color:textButons,
+    marginLeft:5,
+  },
+
+  headerTextJL:{
+    fontSize:36,
+    fontWeight:'bold',
+    color:textButons,
+    marginLeft:5,
   },
 
   ContainergoBack:{

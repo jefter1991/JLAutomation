@@ -26,7 +26,9 @@
     },
     "android": {
       "package": "com.JLSystem.JLAutomation"
-    }
+    },
+    "description": "",
+    "githubUrl": "https://github.com/jefter1991/jlautomation"
   },
   "android": {
     "package": "com.JLSystem.JLAutomation",
