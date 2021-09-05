@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "JLAutomation",
+    "slug": "jlautomation",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#004757"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "bundleIdentifier": "com.JLSystem.JLAutomation",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.JLSystem.JLAutomation"
+    },
+    "description": "",
+    "githubUrl": "https://github.com/jefter1991/jlautomation"
+  },
+  "android": {
+    "package": "com.JLSystem.JLAutomation",
+    "versionCode": 1
+  }
+}
