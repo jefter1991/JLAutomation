@@ -10,9 +10,12 @@ import api from '../../services/api';
 import iconLampApag from '../../assets/icons/lampApag.png';
 import iconLampAcesa from '../../assets/icons/lampAcesa.png';
 import iconVentilador from '../../assets/icons/ventilador.png';
+import iconVentiladorLigado from '../../assets/icons/ventiladorLigado.png';
 import iconAr from '../../assets/icons/ar-condicionado.png';
+import iconArDesl from '../../assets/icons/ar-condicionadoDesl.png';
 import iconPortao from '../../assets/icons/Portao.png';
 import iconPortaoMot from '../../assets/icons/portaoMotor.png';
+import iconPortaoMotAb from '../../assets/icons/portaoMotorAberto.png';
 
 export default function DevicesParts(){
 
@@ -148,10 +151,13 @@ export default function DevicesParts(){
                     source={
                       (item.dev_url == 'Lampada' && item.dev_status == 0)?iconLampApag:
                       (item.dev_url == 'Lampada' && item.dev_status == 1)?iconLampAcesa:
-                      item.dev_url == 'Ventilador'?iconVentilador:
-                      item.dev_url == 'Ar-Condicionado'?iconAr:
-                      item.dev_url == 'Portão'?iconPortao:
-                      iconPortaoMot
+                      (item.dev_url == 'Motor Portão' && item.dev_status == 0)?iconPortaoMot:
+                      (item.dev_url == 'Motor Portão' && item.dev_status == 1)?iconPortaoMotAb:
+                      (item.dev_url == 'Ventilador' && item.dev_status == 0)?iconVentilador:
+                      (item.dev_url == 'Ventilador' && item.dev_status == 1)?iconVentiladorLigado:
+                      (item.dev_url == 'Ar-Condicionado' && item.dev_status == 0)?iconArDesl:
+                      (item.dev_url == 'Ar-Condicionado' && item.dev_status == 1)?iconAr:
+                      iconPortao
                     }
                    style={styles.icons}/>
                   </TouchableOpacity> 
