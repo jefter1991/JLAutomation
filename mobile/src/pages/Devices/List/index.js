@@ -3,7 +3,7 @@ import {View, Text, Image, TouchableOpacity, SafeAreaView, FlatList, Alert, Imag
 import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
-import styles from './styles';
+import styles, {LoadingIcon} from './styles';
 
 import imgBg from '../../../assets/Fundo.jpeg';
 import api from '../../../services/api';
@@ -11,6 +11,7 @@ import api from '../../../services/api';
 export default function ListDevices(){
 
   const [devices, setDevices] = useState([]);
+  const [loading, setLoading] = useState(false);
   const navigation = useNavigation();
 
   const buttonAlert = (dev_name, part_name, dev_id) =>
@@ -37,10 +38,12 @@ export default function ListDevices(){
   }
 
   async function loadDevices(){
+    setLoading(true);
     const response = await api.get('/devices');
     if(response.data){
       setDevices(response.data);
     }  
+    setLoading(false);
   }
 
   useEffect(() =>{
@@ -99,6 +102,9 @@ export default function ListDevices(){
     </View>
     <SafeAreaView 
       style={styles.containerList}>
+     {loading && 
+        <LoadingIcon size='large' color="#47c3dd"/>
+      }   
       <FlatList
         data={devices}
         renderItem={({ item }) => 

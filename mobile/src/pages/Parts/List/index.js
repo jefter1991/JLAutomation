@@ -3,7 +3,7 @@ import {View, Text, Image, TouchableOpacity, SafeAreaView, FlatList, ImageBackgr
 import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
-import styles from './styles';
+import styles, {LoadingIcon} from './styles';
 
 import imgBg from '../../../assets/Fundo.jpeg';
 
@@ -13,6 +13,7 @@ export default function ListParts(){
 
   const [parts, setParts] = useState([]);
   const navigation = useNavigation();
+  const [loading, setLoading] = useState(false);
 
   function navigateToEditPart(item){
     navigation.navigate('EditParts',{item});
@@ -23,10 +24,12 @@ export default function ListParts(){
   }
 
   async function loadParts(){
+    setLoading(true);
     const response = await api.get('/parts');
     if(response.data){
       setParts(response.data);
     }  
+    setLoading(false);
   }
 
   useEffect(() =>{
@@ -75,6 +78,9 @@ export default function ListParts(){
     </View>
     <SafeAreaView 
       style={styles.containerList}>
+      {loading && 
+         <LoadingIcon size='large' color="#47c3dd"/>
+      }   
       <FlatList
         data={parts}
         renderItem={({ item }) => 

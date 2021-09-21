@@ -1,10 +1,15 @@
 import { StyleSheet} from 'react-native';
 import Constants from 'expo-constants';
+import styled from 'styled-components/native';
 
 const fundo = "#FFF";
 const contFundo = "#A9A9A9";
 const buttons = '#47c3dd';
 const textButons = "#FFF";
+
+export const LoadingIcon = styled.ActivityIndicator`
+    margin-top:50px;
+`;
 
 export default StyleSheet.create({
 
@@ -103,5 +108,16 @@ export default StyleSheet.create({
     height:25,
   },
 
+  dataEmpty:{
+    marginTop:60,
+    marginLeft:20,
+  },
+
+  TextdataEmpty:{
+    
+    color:buttons,
+    fontSize:16,
+    fontWeight:'bold'
+  }
 
 });

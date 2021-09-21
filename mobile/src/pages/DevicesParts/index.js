@@ -2,7 +2,7 @@ import React,{useEffect, useState} from 'react';
 import {View, Text, Image, TouchableOpacity, SafeAreaView, FlatList, ImageBackground} from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { Feather} from '@expo/vector-icons';
-import styles from './styles';
+import styles, {LoadingIcon} from './styles';
   
 import imgBg from '../../assets/Fundo.jpeg';
 import api from '../../services/api';
@@ -22,10 +22,11 @@ export default function DevicesParts(){
   const navigation = useNavigation();
   const [devices, setDevices] = useState([]);
   const [name_part, setName_part] = useState('');
+  const [loading, setLoading] = useState(false);
   const route = useRoute();
   const id_part = route.params.id;
   const columns = 2;
-
+  
   async function onSubmit(device){
     let status = device.dev_status;
     const dev_ip = device.dev_ip;
@@ -63,13 +64,16 @@ export default function DevicesParts(){
     
     const rows = Math.floor(data.length / columns); 
     let lastRowElements = data.length - rows * columns; 
-    while (lastRowElements !== columns) { 
-      data.push({ 
-        id: `empty-${lastRowElements}`,
-        name: `empty-${lastRowElements}`,
-        empty: true
-      });
-      lastRowElements += 1; 
+    //console.log(data);
+    if (data.length > 0){
+      while (lastRowElements !== columns) { 
+        data.push({ 
+          id: `empty-${lastRowElements}`,
+          name: `empty-${lastRowElements}`,
+          empty: true
+        });
+        lastRowElements += 1; 
+      }
     }
     return data; 
   }
@@ -83,8 +87,10 @@ export default function DevicesParts(){
   }
 
   async function loadDevices(){ 
+    setLoading(true);
     const response = await api.get(`devicesPart/${id_part}`);
     setDevices(response.data);
+    setLoading(false);
   } 
   
   function goBack(){
@@ -130,6 +136,11 @@ export default function DevicesParts(){
    <View style={styles.containtDevices}>
       
       <SafeAreaView>          
+      {loading && 
+                  <LoadingIcon size='large' color="#47c3dd"/>
+      }
+      
+      {devices.length > 0 && !loading ?
       <FlatList
             data={createRows(devices,columns)}
             keyExtractor={ (item => item.part_id == undefined?
@@ -138,7 +149,9 @@ export default function DevicesParts(){
             numColumns={columns}
             renderItem={({ item }) => {
               if (item.empty) {
-                return <View style={[styles.item, styles.itemEmpty]} />;
+                return <View style={[styles.item, styles.itemEmpty]} >
+                          
+                       </View>
               }
               return (
                 
@@ -164,7 +177,9 @@ export default function DevicesParts(){
                 
               );
             }}
+      
       />
+      :devices.length == 0 && !loading? <View style={styles.dataEmpty}><Text style={styles.TextdataEmpty}>Nenhum Dispositivo neste ambiente</Text></View>:<View></View>}
       </SafeAreaView>
           
     </View> 

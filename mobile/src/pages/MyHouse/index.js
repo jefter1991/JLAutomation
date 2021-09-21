@@ -3,10 +3,10 @@ import {View, Text, Image, TouchableOpacity, SafeAreaView, ImageBackground,FlatL
 import { useNavigation } from '@react-navigation/native';
 import * as Animatable from 'react-native-animatable';
 import { Feather} from '@expo/vector-icons';
-import styles from './styles';
+import styles, {LoadingIcon} from './styles';
 
 import imgBg from '../../assets/Fundo.jpeg';
-import logoImg from '../../assets/logo.png';
+
 
 import iconQuarto from '../../assets/icons/quarto.png';
 import iconSala from '../../assets/icons/sala.png';
@@ -20,6 +20,7 @@ import api from '../../services/api';
 
 export default function MyHouse(){
   const [parts, setParts] = useState([]);
+  const [loading, setLoading] = useState(false);
   const navigation = useNavigation();
   const columns = 2;
 
@@ -46,8 +47,10 @@ export default function MyHouse(){
   }
 
   async function loadParts(){
+    setLoading(true);
     const response = await api.get('/partsA');
     setParts(response.data);
+    setLoading(false);
   }
 
   useEffect(() =>{
@@ -104,13 +107,16 @@ return(
       duration={1000}
   >
       <SafeAreaView>
+      {loading && 
+                  <LoadingIcon size='large' color="#47c3dd"/>
+      }
       <FlatList
             data={createRows(parts,columns)}
             keyExtractor={item => item.part_id}
             numColumns={columns}
             renderItem={({ item }) => {
               if (item.empty) {
-                return <View style={[styles.item, styles.itemEmpty]} />;
+                return <View style={[styles.item, styles.itemEmpty]}/>;
               }
               return (
                 

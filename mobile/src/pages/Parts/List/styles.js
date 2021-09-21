@@ -1,10 +1,15 @@
 import { StyleSheet} from 'react-native';
 import Constants from 'expo-constants';
+import styled from 'styled-components/native';
 
 const fundo = "#FFF";
 const contFundo = "#A9A9A9";
 const buttons = "#47c3dd";//"#4682B4";
 const textButons = "#FFF";
+
+export const LoadingIcon = styled.ActivityIndicator`
+    margin-top:50px;
+`;
 
 export default StyleSheet.create({
 
