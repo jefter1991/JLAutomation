@@ -1,16 +1,12 @@
 import { StyleSheet} from 'react-native';
 import Constants from 'expo-constants';
-
-
-const buttons = "#47c3dd";
-const textButons = "#FFF";
+import gStyle from '../../../generalStyle';
 
 export default StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal:24,
     paddingTop: Constants.statusBarHeight + 20,
-   // backgroundColor:contFundo,
   },
 
   header: {
@@ -25,14 +21,14 @@ export default StyleSheet.create({
   headerText:{
     fontSize:27,
     fontWeight:'bold',
-    color:textButons,
+    color:gStyle.textButtons,
     marginLeft:5,
   },
 
   headerTextJL:{
     fontSize:36,
     fontWeight:'bold',
-    color:textButons,
+    color:gStyle.textButtons,
     marginLeft:5,
   },
 
@@ -42,7 +38,7 @@ export default StyleSheet.create({
   },
 
   goBackButton:{
-    backgroundColor:buttons,
+    backgroundColor:gStyle.buttons,
     padding:8,
     borderRadius:5,
     marginTop:5,
@@ -56,7 +52,7 @@ export default StyleSheet.create({
   },
 
   formContainer:{
-    backgroundColor:textButons,
+    backgroundColor:gStyle.fundo,
     marginTop:20,
     paddingVertical:20,
     paddingHorizontal:30,
@@ -71,7 +67,7 @@ export default StyleSheet.create({
   formHeaderText:{
     fontSize:20,
     fontWeight:'bold',
-    color:buttons,
+    color:gStyle.buttons,
   },
 
   
@@ -80,7 +76,7 @@ formControl:{
 },
 
 buttonConfirm:{
-  backgroundColor:buttons,
+  backgroundColor:gStyle.buttons,
   
 },
 

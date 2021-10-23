@@ -7,7 +7,7 @@ import * as Animatable from 'react-native-animatable';
 
 import api from '../../../services/api';
 import styles from './styles';
-import imgBg from '../../../assets/Fundo.jpeg';
+import gStyle from '../../../generalStyle';
 
 
 function validateIP(id) {
@@ -101,7 +101,7 @@ export default function CreateParts(){
   return (
     <ImageBackground 
         style={styles.container}
-        source={imgBg}
+        source={gStyle.imgBg}
     >
         <View style={styles.header}>
         <Animatable.Text 

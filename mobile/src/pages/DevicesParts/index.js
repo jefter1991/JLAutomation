@@ -4,7 +4,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { Feather} from '@expo/vector-icons';
 import styles, {LoadingIcon} from './styles';
   
-import imgBg from '../../assets/Fundo.jpeg';
+import gStyle from '../../generalStyle';
 import api from '../../services/api';
 
 import iconLampApag from '../../assets/icons/lampApag.png';
@@ -105,7 +105,7 @@ export default function DevicesParts(){
   return (
     <ImageBackground 
       style={styles.container}
-      source={imgBg}
+      source={gStyle.imgBg}
     
     >
     

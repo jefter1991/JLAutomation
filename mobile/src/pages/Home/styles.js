@@ -1,9 +1,10 @@
 import { StyleSheet} from 'react-native';
 import Constants from 'expo-constants';
+import gStyle from '../../generalStyle';
 
-const fundo = "#4682B4";
-const buttons = '#47c3dd'//'#4682B4';//"#008080";
-const textButons = "#FFF";
+
+//const buttons = '#47c3dd';//'#4682B4';//"#008080";
+//const textButtons = "#FFF";
 
 export default StyleSheet.create({
   container: {
@@ -24,14 +25,14 @@ export default StyleSheet.create({
   headerText:{
     fontSize:27,
     fontWeight:'bold',
-    color:textButons,
+    color:gStyle.textButtons,
     marginLeft:5,
   },
 
   headerTextJL:{
     fontSize:36,
     fontWeight:'bold',
-    color:textButons,
+    color:gStyle.textButtons,
     marginLeft:5,
   },
 
@@ -43,7 +44,7 @@ export default StyleSheet.create({
   },
 
   buttonNewPart:{
-    backgroundColor:buttons,
+    backgroundColor:gStyle.buttons,
     justifyContent:'space-between',
     alignItems:'center',
     borderRadius:8,
@@ -53,13 +54,13 @@ export default StyleSheet.create({
   },
 
   buttonText:{
-    color:textButons,
+    color:gStyle.textButtons,
     marginRight:5,
     fontWeight:'bold',
   },
   
   buttonNewDevice:{
-    backgroundColor:buttons,
+    backgroundColor:gStyle.buttons,
     justifyContent:'space-between',
     alignItems:'center',
     borderRadius:8,
@@ -84,7 +85,7 @@ export default StyleSheet.create({
     fontSize:24,
     marginBottom:10,
     fontWeight:'bold',
-    color:textButons,
+    color:gStyle.textButtons,
   },
 
   stimgHouse:{

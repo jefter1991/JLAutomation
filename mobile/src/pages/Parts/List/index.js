@@ -5,7 +5,7 @@ import { Feather } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
 import styles, {LoadingIcon} from './styles';
 
-import imgBg from '../../../assets/Fundo.jpeg';
+import gStyle from '../../../generalStyle';
 
 import api from '../../../services/api';
 
@@ -40,7 +40,7 @@ export default function ListParts(){
 
     <ImageBackground style={styles.container}
       style={styles.container}
-      source={imgBg}
+      source={gStyle.imgBg}
     >  
     <View style={styles.header}>
           <Animatable.Text 

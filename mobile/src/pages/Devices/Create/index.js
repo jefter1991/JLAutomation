@@ -8,7 +8,7 @@ import { Feather} from '@expo/vector-icons';
 import api from '../../../services/api';
 
 import styles from './styles';
-import imgBg from '../../../assets/Fundo.jpeg';
+import gStyle from '../../../generalStyle';
 
 export default function Devices(){
 
@@ -85,7 +85,7 @@ export default function Devices(){
     
     <ImageBackground 
         style={styles.container}
-        source={imgBg}    
+        source={gStyle.imgBg}    
     >    
       <View style={styles.header}>
           <Animatable.Text 

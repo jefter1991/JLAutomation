@@ -2,10 +2,7 @@ import { StyleSheet} from 'react-native';
 import Constants from 'expo-constants';
 import styled from 'styled-components/native';
 
-const fundo = "#FFF";
-const contFundo = "#A9A9A9";
-const buttons = "#47c3dd";//"#4682B4";
-const textButons = "#FFF";
+import gStyle from '../../../generalStyle';
 
 export const LoadingIcon = styled.ActivityIndicator`
     margin-top:50px;
@@ -17,7 +14,6 @@ export default StyleSheet.create({
     flex: 1,
     paddingHorizontal:24,
     paddingTop: Constants.statusBarHeight +20,
-    backgroundColor:contFundo,
   },
 
   header: {
@@ -29,14 +25,14 @@ export default StyleSheet.create({
   headerText:{
     fontSize:27,
     fontWeight:'bold',
-    color: textButons,
+    color: gStyle.textButtons,
     marginLeft:5,
   },
 
   headerTextJL:{
     fontSize:36,
     fontWeight:'bold',
-    color: textButons,
+    color: gStyle.textButtons,
     marginLeft:10,
   },
 
@@ -46,7 +42,7 @@ export default StyleSheet.create({
   },
 
   goBackButton:{
-    backgroundColor:buttons,
+    backgroundColor:gStyle.buttons,
     padding:8,
     borderRadius:5,
     marginTop:5,
@@ -56,7 +52,7 @@ export default StyleSheet.create({
   },
 
   buttonTextColor:{
-    color:textButons,
+    color:gStyle.textButtons,
   },
 
   headerParts:{
@@ -70,7 +66,7 @@ export default StyleSheet.create({
   headerPartsText:{
     fontSize:25,
     fontWeight:'bold',
-    color: textButons,
+    color: gStyle.textButtons,
   },
 
   containerList:{
@@ -79,7 +75,7 @@ export default StyleSheet.create({
   },
 
   listItem:{
-    backgroundColor: buttons,
+    backgroundColor: gStyle.buttons,
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
@@ -91,6 +87,6 @@ export default StyleSheet.create({
   listItemText:{
     fontSize:22,
     fontWeight:'bold',
-    color:textButons,
+    color:gStyle.textButtons,
   },
 });

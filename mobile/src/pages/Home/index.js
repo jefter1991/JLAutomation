@@ -6,7 +6,8 @@ import * as Animatable from 'react-native-animatable';
 import styles from './styles';
 
 import ImgHouse from '../../assets/Home2.png';
-import imgBg from '../../assets/Fundo.jpeg';
+import gStyle from '../../generalStyle';
+ 
 
 export default function Home(){
   
@@ -35,7 +36,7 @@ export default function Home(){
   return (
     <ImageBackground 
       style={styles.container}
-      source={imgBg}
+      source={gStyle.imgBg}
     
     >
         

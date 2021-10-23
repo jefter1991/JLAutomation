@@ -1,11 +1,8 @@
 import { StyleSheet} from 'react-native';
 import Constants from 'expo-constants';
 import styled from 'styled-components/native';
+import gStyle from '../../generalStyle';
 
-const fundo = "#FFF";
-const contFundo = "#A9A9A9";
-const buttons = '#47c3dd';
-const textButons = "#FFF";
 
 export const LoadingIcon = styled.ActivityIndicator`
     margin-top:50px;
@@ -17,11 +14,9 @@ export default StyleSheet.create({
     flex: 1,
     paddingHorizontal:24,
     paddingTop: Constants.statusBarHeight +20,
-    //backgroundColor:contFundo,
   },
 
   header: {
-    //flexDirection:'row',
     justifyContent: 'space-between',
     alignItems:'center',
     backgroundColor:'transparent',
@@ -31,14 +26,14 @@ export default StyleSheet.create({
   headerText:{
     fontSize:26,
     fontWeight:'bold',
-    color: textButons,
+    color: gStyle.textButtons,
     marginLeft:5,
   },
 
   headerTextJL:{
     fontSize:36,
     fontWeight:'bold',
-    color:textButons,
+    color:gStyle.textButtons,
     marginLeft:5,
   },
 
@@ -48,7 +43,7 @@ export default StyleSheet.create({
   },
 
   goBackButton:{
-    backgroundColor:buttons,
+    backgroundColor:gStyle.buttons,
     padding:8,
     borderRadius:5,
     marginTop:5,
@@ -58,14 +53,14 @@ export default StyleSheet.create({
   },
 
   buttonTextColor:{
-    color:textButons,
+    color:gStyle.textButtons,
   },
 
   headerDevices:{
     marginTop:10,
     justifyContent:"center",
     alignItems:'center',
-    backgroundColor:fundo,
+    backgroundColor:gStyle.fundo,
     paddingTop:10,
     height:70,
   },
@@ -73,20 +68,20 @@ export default StyleSheet.create({
   headerDevicesText:{
     fontSize:18,
     fontWeight:'bold',
-    color: buttons,
+    color: gStyle.buttons,
   },
   
   containtDevices:{
     width:'100%',
     height:380,
-    backgroundColor:fundo,
+    backgroundColor:gStyle.fundo,
     padding:10,
   },
 
   item: {
     alignItems: "center",
     justifyContent:"space-between",
-    backgroundColor: buttons,
+    backgroundColor: gStyle.buttons,
     flexGrow: 1,
     margin: 4,
     padding: 20,
@@ -96,7 +91,7 @@ export default StyleSheet.create({
   },
 
   text: {
-    color: textButons
+    color: gStyle.textButtons
   },
   
   itemEmpty: {
@@ -115,7 +110,7 @@ export default StyleSheet.create({
 
   TextdataEmpty:{
     
-    color:buttons,
+    color:gStyle.buttons,
     fontSize:16,
     fontWeight:'bold'
   }

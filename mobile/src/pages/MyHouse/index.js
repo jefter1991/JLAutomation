@@ -5,7 +5,7 @@ import * as Animatable from 'react-native-animatable';
 import { Feather} from '@expo/vector-icons';
 import styles, {LoadingIcon} from './styles';
 
-import imgBg from '../../assets/Fundo.jpeg';
+import gStyle from '../../generalStyle';
 
 
 import iconQuarto from '../../assets/icons/quarto.png';
@@ -62,7 +62,7 @@ return(
   
   <ImageBackground 
       style={styles.container}
-      source={imgBg}
+      source={gStyle.imgBg}
     
   >
     
